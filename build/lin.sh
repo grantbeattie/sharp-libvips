@@ -303,7 +303,7 @@ rm -rf ${TARGET}/lib/{pkgconfig,.libs,*.la,cmake}
 cd ${TARGET}/include
 
 # Set RPATH to $ORIGIN
-find ${TARGET}/lib -type f -name "*.so*" -exec sh -c "patchelf --set-rpath '\$ORIGIN' --force-rpath {}" \;
+find ${TARGET}/lib -type f -name "*.so*" -exec sh -c "patchelf --set-rpath '\$ORIGIN' --force-rpath {} ${PATCHELF}" \;
 
 # Create JSON file of version numbers
 cd ${TARGET}

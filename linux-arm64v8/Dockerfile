@@ -41,7 +41,8 @@ ENV \
   PLATFORM="linux-arm64v8" \
   CHOST="aarch64-linux-gnu" \
   FLAGS="-march=armv8-a -s -O3 -fPIC -D_GLIBCXX_USE_CXX11_ABI=0" \
-  MESON="--cross-file=/root/meson.ini"
+  MESON="--cross-file=/root/meson.ini" \
+  PATCHELF="--page-size 65536"
 
 COPY Toolchain.cmake /root/
 COPY meson.ini /root/
